@@ -1,0 +1,206 @@
+/*start splash Screen styling*/
+
+.splash-container {
+    /* background-image: url('/static/splash_image/splash.webp'); */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/static/AuthFlow/splash_image/splash.webp');
+    flex-direction: column;
+    text-align: center;
+  
+    background-size: cover;
+    background-position: center center;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 40px;
+    align-items: center;
+  }
+  
+  .splash-container h1 {
+    font-family: sans-serif, 'arial';
+    font-size: 5rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+  }
+  
+  .splash-container p {
+    font-family: sans-serif, 'arial';
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px #000;
+  }
+  
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn {
+    font-family: sans-serif, 'arial';
+  
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    border-radius: 5px;
+    text-shadow: 1px 1px #000;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btn-signup {
+    background-color: #3498db;
+  }
+  
+  .btn-login {
+    background-color: #2ecc71;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .splash-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .btn-container {
+      margin-top: 20px;
+    }
+  }
+  
+/* end splash screen styling */
+  
+  
+  
+
+/* start login screen styling */
+
+.login-container {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/static/splash_image/splash.webp');
+  background-size: cover;
+    background-position: center center;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 40px;
+    align-items: center;
+  }
+  
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+.login-container input[type="text"], .login-container input[type="password"] {
+    font-family: sans-serif, 'arial';
+    font-size: 1.5rem;
+    color: #000;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    width: 100%;
+    }
+
+.login-container h1 {
+    font-family: sans-serif, 'arial';
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+}   
+
+.login-container button[type="submit"] {
+    font-family: sans-serif, 'arial';
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+    text-shadow: 1px 1px #000;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #2ecc71;
+    border: none;
+}
+
+@media only screen and (max-width: 767px) {
+.login-container {
+    flex-direction: column;
+    text-align: center;
+    }
+}
+
+/* end login screen styling */
+
+
+/* start signup screen styling */
+
+.signup-container {
+    /* background-image: url('/static/signup_image/signup.webp'); */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/static/splash_image/splash.webp');
+    flex-direction: column;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 40px;
+    align-items: center;
+  }
+  
+  .signup-container h1 {
+    font-family: sans-serif, 'arial';
+    font-size: 5rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+  }
+  
+  .signup-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .signup-container label {
+    font-family: sans-serif, 'arial';
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+  }
+  
+  .signup-container input[type=text], .signup-container input[type=password] {
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    border: none;
+  }
+  
+  .signup-container button[type=submit] {
+    font-family: sans-serif, 'arial';
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    background-color: #2ecc71;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #000;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .signup-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+/* end signup screen styling */
