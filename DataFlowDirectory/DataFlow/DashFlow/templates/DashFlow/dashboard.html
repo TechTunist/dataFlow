@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block style %} <link rel="stylesheet" href="{% static 'DashFlow/css/styles.css' %}">{% endblock %}
+
+{% block content %}
+
+<h1>This is the current price of bitcoin: ${{data.usd}}</h1>
+
+{% endblock %}

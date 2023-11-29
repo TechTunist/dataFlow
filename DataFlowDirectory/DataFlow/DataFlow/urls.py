@@ -3,5 +3,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(('AuthFlow.urls', 'authflow'), namespace='authflow')),
+    path('auth', include(('AuthFlow.urls', 'authflow'), namespace='authflow')),
+    path('', include(('DashFlow.urls', 'dashflow'), namespace='dashflow')),
 ]
