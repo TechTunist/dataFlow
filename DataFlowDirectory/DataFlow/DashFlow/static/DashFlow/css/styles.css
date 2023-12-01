@@ -6,3 +6,8 @@ h1 {
     color: gray;
     
 }
+
+#chartContainer {
+    max-width: 80px;
+    max-height: 80px;
+}

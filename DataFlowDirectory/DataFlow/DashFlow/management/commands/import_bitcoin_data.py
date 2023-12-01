@@ -1,6 +1,5 @@
 from django.core.management.base import BaseCommand
 import requests
-from django.conf import settings
 from DashFlow.models import BitcoinDailyMeta, BitcoinDaily
 import datetime
 
@@ -15,7 +14,7 @@ class Command(BaseCommand):
     help = "Fetches and stores Bitcoin daily data"
 
     def handle(self, *args, **kwargs):
-        api_endpoint = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BTCUSD&from=2011-01-01&to=2023-11-30&apikey={alpha_vantage_api_key}"
+        api_endpoint = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BTCUSD&from=2011-01-01&to=2023-11-30&apikey={alpha_vantage_api_key}"        
         
         params = {'api_key': alpha_vantage_api_key}
 
