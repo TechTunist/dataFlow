@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.views import View
 import requests
 from .models import BitcoinDaily
-
 import os
 from dotenv import load_dotenv
+
+from rest_framework import generics
+from .serializers import BitcoinDailySerializer
+
 
 load_dotenv()
 

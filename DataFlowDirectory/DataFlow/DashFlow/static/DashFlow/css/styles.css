@@ -4,10 +4,9 @@ html {
 
 h1 {
     color: gray;
-    
 }
 
 #chartContainer {
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 600px;
+    max-height: 600px;
 }

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'AuthFlow',
     'DashFlow',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
