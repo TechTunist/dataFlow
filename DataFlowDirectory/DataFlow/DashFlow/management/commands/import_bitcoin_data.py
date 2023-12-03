@@ -1,6 +1,19 @@
+#
+#
+#
+#
+# currently imports entire history of ETH
+#
+#
+#
+#
+
+
+
+
 from django.core.management.base import BaseCommand
 import requests
-from DashFlow.models import BitcoinDailyMeta, BitcoinDaily
+from DashFlow.models import BitcoinDailyMeta, BitcoinDaily, EthereumDailyMeta, EthereumDaily
 import datetime
 
 # load the alpha vantage api key for btc time series data in .env
@@ -14,7 +27,7 @@ class Command(BaseCommand):
     help = "Fetches and stores Bitcoin daily data"
 
     def handle(self, *args, **kwargs):
-        api_endpoint = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BTCUSD&from=2011-01-01&to=2023-11-30&apikey={alpha_vantage_api_key}"        
+        api_endpoint = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&outputsize=full&symbol=ETHUSD&apikey={alpha_vantage_api_key}"        
         
         params = {'api_key': alpha_vantage_api_key}
 
@@ -23,7 +36,7 @@ class Command(BaseCommand):
 
         # parse and save the Meta Data
         meta_data = data['Meta Data']
-        meta = BitcoinDailyMeta.objects.create(
+        meta = EthereumDailyMeta.objects.create(
             information=meta_data['1. Information'],
             symbol=meta_data['2. Symbol'],
             last_refreshed=datetime.datetime.strptime(meta_data['3. Last Refreshed'], '%Y-%m-%d').date(),
@@ -34,7 +47,7 @@ class Command(BaseCommand):
         # Parse and save the time series data
         time_series_data = data['Time Series (Daily)']
         for date_str, daily_data in time_series_data.items():
-            BitcoinDaily.objects.create(
+            EthereumDaily.objects.create(
                 meta_data=meta,
                 date=datetime.datetime.strptime(date_str, '%Y-%m-%d').date(),
                 open=daily_data['1. open'],

@@ -6,7 +6,8 @@ h1 {
     color: gray;
 }
 
-#chartContainer {
-    max-width: 600px;
-    max-height: 600px;
+#btcChartContainer, #ethChartContainer {
+    max-width: 400px;
+    max-height: 200px; 
+    margin: auto; 
 }

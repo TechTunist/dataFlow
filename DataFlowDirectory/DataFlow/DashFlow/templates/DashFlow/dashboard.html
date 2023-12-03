@@ -11,22 +11,26 @@
 
 <h1>This is the current price of bitcoin: ${{data.last.close}}</h1>
 
-<div id="chartContainer">
-    <canvas id="myChart" width="400" height="400"></canvas>
+<div id="btcChartContainer">
+    <canvas id="btcChart"></canvas>
+</div>
+
+<div id="ethChartContainer">
+    <canvas id="ethChart"></canvas>
 </div>
 
 
 <script>
-    console.log({{chart_data.close|safe}})
-    console.log({{chart_data.date|safe}})
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
+    {% comment %} console.log({{btc_chart_data.close|safe}})
+    console.log({{btc_chart_data.date|safe}}) {% endcomment %}
+    var ctx = document.getElementById('btcChart').getContext('2d');
+    var btc_chart = new Chart(ctx, {
         type: 'line', // Change the type as per your needs
         data: {
-            labels: {{ chart_data.date|safe }},
+            labels: {{ btc_chart_data.date|safe }},
             datasets: [{
                 label: 'Bitcoin Daily Close Prices',
-                data: {{ chart_data.close|safe }},
+                data: {{ btc_chart_data.close|safe }},
                 // Add other dataset properties like color, etc.
             },
             // You can add more datasets like high, low, close, volume etc.
@@ -34,7 +38,38 @@
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true
+            maintainAspectRatio: true,
+            onResize: function(chart, size) {
+                chart.canvas.parentNode.style.height = '400px';
+                chart.canvas.parentNode.style.width = '600px';
+            }
+        }
+    });
+
+    // eth chart
+    var ctx = document.getElementById('ethChart').getContext('2d');
+    var eth_chart = new Chart(ctx, {
+        type: 'line', // Change the type as per your needs
+        data: {
+            labels: {{ eth_chart_data.date|safe }},
+            datasets: [{
+                label: 'Ethereum Daily Close Prices',
+                data: {{ eth_chart_data.close|safe }},
+                borderWidth: 0.1,
+                pointRadius: 1,
+                pointHoverRadius: 10,
+                // Add other dataset properties like color, etc.
+            },
+            // You can add more datasets like high, low, close, volume etc.
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            onResize: function(chart, size) {
+                chart.canvas.parentNode.style.height = '400px';
+                chart.canvas.parentNode.style.width = '600px';
+            }
         }
     });
     </script>

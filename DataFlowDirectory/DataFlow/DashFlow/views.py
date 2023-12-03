@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 import requests
-from .models import BitcoinDaily
+from .models import BitcoinDaily, EthereumDaily
 import os
 from dotenv import load_dotenv
 
@@ -29,8 +29,8 @@ def dash_view(request):
             data = response.json()
             print(data['bitcoin'])
             # print(data['usd'])
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
     context = {'data': data['bitcoin']}
 
@@ -88,15 +88,29 @@ class DashView(View):
         data = {}
 
         try:
-            data = BitcoinDaily.objects.all().order_by('date')
-            chart_data = {
-                "date": [d.date.strftime("%Y-%m-%d") for d in data],
-                "close": [round(float(d.close), 2) for d in data]
+            btcData = BitcoinDaily.objects.all().order_by('date')
+            btc_chart_data = {
+                "date": [d.date.strftime("%Y-%m-%d") for d in btcData],
+                "close": [round(float(d.close), 2) for d in btcData]
             }
 
         except Exception as e:
             print(e)
 
-        context = {'data': data, 'chart_data': chart_data} 
+        # eth data
+        try:
+            ethData = EthereumDaily.objects.all().order_by('date')
+            eth_chart_data = {
+                "date": [d.date.strftime("%Y-%m-%d") for d in ethData],
+                "close": [round(float(d.close), 2) for d in ethData]
+            }
+
+        except Exception as e:
+            print(e)
+
+        context = {'data': btcData,
+                   'btc_chart_data': btc_chart_data,
+                   'eth_chart_data': eth_chart_data,
+                   } 
 
         return render(request, self.template_name, context)
