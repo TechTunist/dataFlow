@@ -31,6 +31,9 @@
             datasets: [{
                 label: 'Bitcoin Daily Close Prices',
                 data: {{ btc_chart_data.close|safe }},
+                borderWidth: 1,
+                pointRadius: 1,
+                pointHoverRadius: 10,
                 // Add other dataset properties like color, etc.
             },
             // You can add more datasets like high, low, close, volume etc.
@@ -55,7 +58,7 @@
             datasets: [{
                 label: 'Ethereum Daily Close Prices',
                 data: {{ eth_chart_data.close|safe }},
-                borderWidth: 0.1,
+                borderWidth: 1,
                 pointRadius: 1,
                 pointHoverRadius: 10,
                 // Add other dataset properties like color, etc.

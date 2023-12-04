@@ -48,3 +48,14 @@ class EthereumDaily(models.Model):
 
     def __str__(self):
         return f"{self.meta_data} - {self.date.strftime('%Y-%m-%d')}: Open: {self.open}, Close: {self.close}"
+    
+
+class Person(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    age = models.PositiveIntegerField()
+    phone = models.CharField(max_length=15)
+    access = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.name

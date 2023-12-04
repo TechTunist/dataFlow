@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import BitcoinDailyMeta, BitcoinDaily
+from .models import BitcoinDailyMeta, BitcoinDaily, Person
 
 # Bitcoin Serializers
 class BitcoinDailyMetaSerializer(serializers.ModelSerializer):
@@ -37,3 +37,9 @@ class EthereumDateAndCloseSerializer(serializers.ModelSerializer):
     class Meta:
         model = BitcoinDaily
         fields = ['date', 'close']
+
+
+class PersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Person
+        fields = ['name', 'email', 'age', 'phone', 'access']
