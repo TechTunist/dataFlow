@@ -42,4 +42,4 @@ class EthereumDateAndCloseSerializer(serializers.ModelSerializer):
 class PersonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Person
-        fields = ['name', 'email', 'age', 'phone', 'access']
+        fields = ['id', 'name', 'email', 'age', 'phone', 'access']
