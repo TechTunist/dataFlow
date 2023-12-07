@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 from rest_framework import generics
 from .serializers import BitcoinDailySerializer
+import json
 
 
 load_dotenv()
@@ -108,9 +109,25 @@ class DashView(View):
         except Exception as e:
             print(e)
 
+        # create object formatted for lightweight charts
+        bitcoin_data = BitcoinDaily.objects.order_by('date')
+
+        data_for_chart = []
+        for entry in bitcoin_data:
+            formatted_entry = {
+                'time': entry.date.strftime('%Y-%m-%d'),
+                'value': int(entry.close)  # Assuming you are using 'close' field
+            }
+            data_for_chart.append(formatted_entry)
+            data_for_chart_json = json.dumps(data_for_chart)
+
+        # print the type of each value in the queryset
+        print((data_for_chart))
+    
         context = {'data': btcData,
                    'btc_chart_data': btc_chart_data,
                    'eth_chart_data': eth_chart_data,
+                   'data_for_chart_json': data_for_chart_json,
                    } 
 
         return render(request, self.template_name, context)

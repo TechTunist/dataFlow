@@ -5,7 +5,10 @@
 
 {% block style %} <link rel="stylesheet" href="{% static 'DashFlow/css/styles.css' %}">{% endblock %}
 
-{% block script %} <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> {% endblock %}
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ {% endblock %}
 
 {% block content %}
 
@@ -17,6 +20,11 @@
 
 <div id="ethChartContainer">
     <canvas id="ethChart"></canvas>
+</div>
+
+{% comment %} lightweight charts {% endcomment %}
+<div id="chart-container" style="height: 300px; width: 600px;">
+
 </div>
 
 
@@ -75,7 +83,64 @@
             }
         }
     });
-    </script>
+
+// lightweight charts
+var chartData = JSON.parse('{{ data_for_chart_json|safe }}');
+
+var staticChartData = [
+    { "time": "2023-11-01", "value": 35000 },
+    { "time": "2023-11-02", "value": 35500 },
+    { "time": "2023-11-03", "value": 36000 },
+    { "time": "2023-11-04", "value": 35000 },
+    { "time": "2023-11-05", "value": 34500 },
+    { "time": "2023-11-06", "value": 32000 },
+    // ...add a few more records
+];
+
+{% comment %} chartData.forEach(entry => {
+    console.log(`Time: ${entry.time}, Type: ${typeof entry.time}`);
+    console.log(`Value: ${entry.value}, Type: ${typeof entry.value}`);
+});
+
+staticChartData.forEach(entry => {
+    console.log(`Time: ${entry.time}, Type: ${typeof entry.time}`);
+    console.log(`Value: ${entry.value}, Type: ${typeof entry.value}`);
+}); {% endcomment %}
+
+console.log(chartData);
+
+window.onload = function() {
+    var chart = LightweightCharts.createChart(document.getElementById('chart-container'), {
+        width: 600,
+        height: 300,
+        layout: {
+            backgroundColor: '#000000',
+            textColor: 'rgba(255, 255, 255, 0.9)',
+        },
+        grid: {
+            vertLines: {
+                color: 'rgba(197, 203, 206, 0.5)',
+            },
+            horzLines: {
+                color: 'rgba(197, 203, 206, 0.5)',
+            },
+        },
+        crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+        },
+        rightPriceScale: {
+            borderColor: 'rgba(197, 203, 206, 0.8)',
+        },
+        timeScale: {
+            borderColor: 'rgba(197, 203, 206, 0.8)',
+        },
+    });
+    
+    var lineSeries = chart.addLineSeries();
+    
+    lineSeries.setData(chartData);
+};
+</script>
     
 
 {% endblock %}
