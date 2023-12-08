@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block style %} <link rel="stylesheet" href="{% static 'DashFlow/css/styles.css' %}">{% endblock %}
+
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+ {% endblock %}
+
+{% block content %}
+
+<h1>This is the current price of bitcoin: ${{data.last.close}}</h1>
+
+<div id="chart-container">
+    <button id="toggleScaleButton">Scale</button>
+</div>
+
+<script>
+// lightweight charts
+var chartData = JSON.parse('{{ data_for_chart_json|safe }}');
+
+console.log(chartData[0].time);
+
+var chart = LightweightCharts.createChart(document.getElementById('chart-container'), {
+    width: 1200,
+    height: 600,
+    layout: {
+        background: {type: 'solid', color: 'black'},
+        textColor: 'white',
+    },
+    grid: {
+        vertLines: {
+            color: 'rgba(197, 203, 206, 0.5)',
+        },
+        horzLines: {
+            color: 'rgba(197, 203, 206, 0.5)',
+        },
+    },
+    crosshair: {
+        mode: LightweightCharts.CrosshairMode.Normal,
+    },
+    rightPriceScale: {
+        borderColor: 'rgba(197, 203, 206, 0.8)',
+    },
+    priceScale: {
+        mode: LightweightCharts.PriceScaleMode.Logarithmic,
+    },
+    scaleType: {
+        mode: LightweightCharts.PriceScaleMode.Logarithmic,
+    },
+    timeScale: {
+        borderColor: 'rgba(197, 203, 206, 0.8)',
+        // additional setting to fit all data
+        visibleRange: {
+            from: chartData[0].time, // assuming your data array has a 'time' property
+            to: chartData[chartData.length - 1].time
+        }
+    },
+});
+
+var lineSeries = chart.addLineSeries();
+
+lineSeries.setData(chartData);
+
+
+// Function to toggle between linear and logarithmic scale
+function toggleScale() {
+    var currentPriceScale = lineSeries.priceScale().options();
+
+    var newScaleType = currentPriceScale.scaleType === LightweightCharts.ScaleType.Linear
+        ? LightweightCharts.ScaleType.Logarithmic
+        : LightweightCharts.ScaleType.Linear;
+
+    lineSeries.applyOptions({
+        priceScale: {
+            scaleType: newScaleType,
+        },
+    });
+}
+// toggle between logarithmic and linear scale
+document.getElementById('toggleScaleButton').addEventListener('click', toggleScale);
+
+</script>
+    
+{% endblock %}

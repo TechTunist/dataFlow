@@ -107,39 +107,55 @@ staticChartData.forEach(entry => {
     console.log(`Value: ${entry.value}, Type: ${typeof entry.value}`);
 }); {% endcomment %}
 
-console.log(chartData);
+{% comment %} console.log(chartData);
 
-window.onload = function() {
-    var chart = LightweightCharts.createChart(document.getElementById('chart-container'), {
-        width: 600,
-        height: 300,
-        layout: {
-            backgroundColor: '#000000',
-            textColor: 'rgba(255, 255, 255, 0.9)',
-        },
-        grid: {
-            vertLines: {
-                color: 'rgba(197, 203, 206, 0.5)',
-            },
-            horzLines: {
-                color: 'rgba(197, 203, 206, 0.5)',
-            },
-        },
-        crosshair: {
-            mode: LightweightCharts.CrosshairMode.Normal,
-        },
-        rightPriceScale: {
-            borderColor: 'rgba(197, 203, 206, 0.8)',
-        },
-        timeScale: {
-            borderColor: 'rgba(197, 203, 206, 0.8)',
-        },
-    });
-    
-    var lineSeries = chart.addLineSeries();
-    
-    lineSeries.setData(chartData);
+const chartOptions = {
+	layout: {
+		textColor: 'white',
+		background: { type: 'solid', color: 'black' },
+	},
 };
+
+var chart = LightweightCharts.createChart(document.getElementById('chart-container'), chartOptions);
+
+chart.applyOptions({
+    timeScale: {
+        timeVisible: true,
+        secondsVisible: true,
+    },
+}); {% endcomment %}
+
+
+var chart = LightweightCharts.createChart(document.getElementById('chart-container'), {
+    width: 600,
+    height: 300,
+    layout: {
+        background: {type: 'solid', color: 'black'},
+        textColor: 'white',
+    },
+    grid: {
+        vertLines: {
+            color: 'rgba(197, 203, 206, 0.5)',
+        },
+        horzLines: {
+            color: 'rgba(197, 203, 206, 0.5)',
+        },
+    },
+    crosshair: {
+        mode: LightweightCharts.CrosshairMode.Normal,
+    },
+    rightPriceScale: {
+        borderColor: 'rgba(197, 203, 206, 0.8)',
+    },
+    timeScale: {
+        borderColor: 'rgba(197, 203, 206, 0.8)',
+    },
+});
+
+var lineSeries = chart.addLineSeries();
+
+lineSeries.setData(chartData);
+
 </script>
     
 
