@@ -33,7 +33,7 @@ def btc_price_by_date(request, start_date):
 @api_view(['GET'])
 def btc_price_all(request):
     if request.method == 'GET':
-        btc_daily = BitcoinDaily.objects.all()
+        btc_daily = BitcoinDaily.objects.all().order_by('date')
 
         serializer = BitcoinDateAndCloseSerializer(btc_daily, many=True)
         return Response(serializer.data)
