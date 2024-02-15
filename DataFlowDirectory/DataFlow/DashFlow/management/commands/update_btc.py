@@ -1,28 +1,26 @@
 from django.core.management.base import BaseCommand
 import requests
-from DashFlow.models import BitcoinDailyMeta, BitcoinDaily, EthereumDailyMeta, EthereumDaily
+from DashFlow.models import BitcoinDailyMeta, BitcoinDaily
 import datetime
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
+## 20 years of data returned from this api call
+# 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo'
+
 class Command(BaseCommand):
-    help = "Fetches and stores Bitcoin & Ethereum daily data"
+    help = "Fetches and stores Bitcoin daily data"
 
     def handle(self, *args, **kwargs):
-        self.update_asset_data('BTCUSD', BitcoinDailyMeta, BitcoinDaily)
-        self.update_asset_data('ETHUSD', EthereumDailyMeta, EthereumDaily)
-
-    def update_asset_data(self, symbol, MetaModel, DataModel):
-        api_key = os.getenv('ALPHA_VANTAGE_API_KEY')
-        api_endpoint = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={api_key}"
+        api_endpoint = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&outputsize=full&symbol=BTCUSD&apikey={}".format(os.getenv('ALPHA_VANTAGE_API_KEY'))
         response = requests.get(api_endpoint)
         data = response.json()
 
-        # Parse and save the Meta Data
+        # Assuming meta_data remains fairly constant, otherwise use get_or_create or update_or_create as needed
         meta_data = data['Meta Data']
-        meta, created = MetaModel.objects.get_or_create(
+        meta, created = BitcoinDailyMeta.objects.get_or_create(
             symbol=meta_data['2. Symbol'],
             defaults={
                 'information': meta_data['1. Information'],
@@ -36,7 +34,7 @@ class Command(BaseCommand):
         time_series_data = data['Time Series (Daily)']
         for date_str, daily_data in time_series_data.items():
             date_obj = datetime.datetime.strptime(date_str, '%Y-%m-%d').date()
-            DataModel.objects.update_or_create(
+            BitcoinDaily.objects.update_or_create(
                 meta_data=meta,
                 date=date_obj,
                 defaults={
