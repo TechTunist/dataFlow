@@ -3,14 +3,15 @@
 # activate the venv
 source venv/bin/activate;
 
-
+# install requirements
+pip install -r DataFlowDirectory/requirements.txt;
 
 # Check if .env file exists
 if [ ! -f "./DataFlowDirectory/.env" ]; then
     echo "Creating .env file..."
 
     # Generate a Django secret key
-    SECRET_KEY=$(python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')
+    SECRET_KEY=$(python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')
 
     # Create the .env file and write the secret key
     echo "SECRET_KEY=${SECRET_KEY}" > .env
@@ -25,11 +26,11 @@ fi
 cd DataFlowDirectory/DataFlow;
 
 # fetch the latest data from the api
-python manage.py update_btc;
-python manage.py update_eth;
+python3 manage.py update_btc;
+python3 manage.py update_eth;
 
 # run the local development server
-python manage.py runserver;
+python3 manage.py runserver;
 
 
 
