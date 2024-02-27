@@ -1,8 +1,25 @@
-# DataHub
+# DataFlow CryptoAnalysis (currently under construction)
 
-## Information relating to financial and other data
+Currenty the API fetches the latest daily close informmation for BTC and ETH
 
-Users can curate their own dashboard of financial charts, sentiment analysis and other metrics.
+## To run the api:
 
-## AlphaVantage API for BTC/USD (the response only returns several months, need to explore how to retrieve further information)
-https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BTCUSD&from=2011-01-01&to=2023-11-30&apikey={alpha_vantage_api_key}
+```bash
+git clone https://github.com/TechTunist/dataFlow.git;
+
+cd dataFlow;
+
+bash deploy.sh
+```
+
+## To run the react frontend:
+
+```bash
+git clone https://github.com/TechTunist/dataFlowReact.git;
+
+cd dataFlowReact;
+
+bash deploy.sh;
+```
+
+
