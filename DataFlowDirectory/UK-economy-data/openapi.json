@@ -1,0 +1,219 @@
+{
+    "id": "str:folder:root",
+    "label": "Stat-Xplore",
+    "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:root",
+    "type": "FOLDER",
+    "children": [
+      {
+        "id": "str:folder:facc",
+        "label": "Alternative Claimant Count",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:facc",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:faa",
+        "label": "Attendance Allowance",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:faa",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fbc",
+        "label": "Benefit Cap",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fbc",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fbencom",
+        "label": "Benefit Combinations",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fbencom",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fbb",
+        "label": "Bereavement Benefits",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fbb",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fbsp",
+        "label": "Bereavement Support Payment",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fbsp",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fca",
+        "label": "Carers Allowance",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fca",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fcms",
+        "label": "Child Maintenance Service",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fcms",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fcilif",
+        "label": "Children in Low Income Families",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fcilif",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fdla",
+        "label": "Disability Living Allowance",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fdla",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fesa",
+        "label": "Employment and Support Allowance",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fesa",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fesawca",
+        "label": "ESA Work Capability Assessments",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fesawca",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:ffrs",
+        "label": "Family Resources Survey",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:ffrs",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:ffema",
+        "label": "Fraud and Error in the Benefit System",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:ffema",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fhbai",
+        "label": "Households Below Average Income",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fhbai",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fhb",
+        "label": "Housing Benefit",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fhb",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fibsda",
+        "label": "Incapacity Benefit and Severe Disablement Allowance",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fibsda",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fibr",
+        "label": "Incapacity Benefit Reassessment",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fibr",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fis",
+        "label": "Income Support",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fis",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fiidb",
+        "label": "Industrial Injuries Disablement Benefit (IIDB)",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fiidb",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fjsa",
+        "label": "Jobseekers Allowance",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fjsa",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fNINO",
+        "label": "NINO Registrations",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fNINO",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fninos",
+        "label": "NINO Registrations",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fninos",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fpc",
+        "label": "Pension Credit",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fpc",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fpi",
+        "label": "Pensioners' Incomes",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fpi",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fpip",
+        "label": "Personal Independence Payment",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fpip",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fpop",
+        "label": "Population Estimates",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fpop",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fsanc",
+        "label": "Sanctions",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fsanc",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fsp",
+        "label": "State Pension",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fsp",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fsmi",
+        "label": "Support for Mortgage Interest",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fsmi",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fuc",
+        "label": "Universal Credit",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fuc",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fucwca",
+        "label": "Universal Credit Work Capability Assessments",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fucwca",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fwb",
+        "label": "Widow's Benefit",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fwb",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fwhp",
+        "label": "Work and Health Programme (WHP)",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fwhp",
+        "type": "FOLDER"
+      },
+      {
+        "id": "str:folder:fwp",
+        "label": "Work Programme",
+        "location": "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:folder:fwp",
+        "type": "FOLDER"
+      }
+    ]
+  }
+  

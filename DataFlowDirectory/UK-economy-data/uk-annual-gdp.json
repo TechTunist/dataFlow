@@ -1,0 +1,30 @@
+{
+    "@context": "https://cdn.ons.gov.uk/assets/json-ld/context.json",
+    "count": 1,
+    "items": [
+      {
+        "edition": "time-series",
+        "links": {
+          "dataset": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/regional-gdp-by-year",
+            "id": "regional-gdp-by-year"
+          },
+          "latest_version": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/regional-gdp-by-year/editions/time-series/versions/6",
+            "id": "6"
+          },
+          "self": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/regional-gdp-by-year/editions/time-series"
+          },
+          "versions": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/regional-gdp-by-year/editions/time-series/versions"
+          }
+        },
+        "state": "published"
+      }
+    ],
+    "limit": 20,
+    "offset": 0,
+    "total_count": 1
+  }
+  

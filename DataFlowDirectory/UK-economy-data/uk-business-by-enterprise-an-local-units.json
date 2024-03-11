@@ -1,0 +1,50 @@
+{
+    "@context": "https://cdn.ons.gov.uk/assets/json-ld/context.json",
+    "count": 2,
+    "items": [
+      {
+        "edition": "2021",
+        "links": {
+          "dataset": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-business-by-enterprises-and-local-units",
+            "id": "uk-business-by-enterprises-and-local-units"
+          },
+          "latest_version": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-business-by-enterprises-and-local-units/editions/2021/versions/1",
+            "id": "1"
+          },
+          "self": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-business-by-enterprises-and-local-units/editions/2021"
+          },
+          "versions": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-business-by-enterprises-and-local-units/editions/2021/versions"
+          }
+        },
+        "state": "published"
+      },
+      {
+        "edition": "2022",
+        "links": {
+          "dataset": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-business-by-enterprises-and-local-units",
+            "id": "uk-business-by-enterprises-and-local-units"
+          },
+          "latest_version": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-business-by-enterprises-and-local-units/editions/2022/versions/1",
+            "id": "1"
+          },
+          "self": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-business-by-enterprises-and-local-units/editions/2022"
+          },
+          "versions": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-business-by-enterprises-and-local-units/editions/2022/versions"
+          }
+        },
+        "state": "published"
+      }
+    ],
+    "limit": 20,
+    "offset": 0,
+    "total_count": 2
+  }
+  

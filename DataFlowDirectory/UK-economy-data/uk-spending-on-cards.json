@@ -1,0 +1,30 @@
+{
+    "@context": "https://cdn.ons.gov.uk/assets/json-ld/context.json",
+    "count": 1,
+    "items": [
+      {
+        "edition": "time-series",
+        "links": {
+          "dataset": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-spending-on-cards",
+            "id": "uk-spending-on-cards"
+          },
+          "latest_version": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-spending-on-cards/editions/time-series/versions/120",
+            "id": "120"
+          },
+          "self": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-spending-on-cards/editions/time-series"
+          },
+          "versions": {
+            "href": "https://api.beta.ons.gov.uk/v1/datasets/uk-spending-on-cards/editions/time-series/versions"
+          }
+        },
+        "state": "published"
+      }
+    ],
+    "limit": 20,
+    "offset": 0,
+    "total_count": 1
+  }
+  
