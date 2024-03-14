@@ -7,17 +7,20 @@ def home(request):
 
 # initial page if not logged in or new user
 class SplashView(View):
-    def get(self, request):
-        return(render(request, 'AuthFlow/splash.html'))
+    pass
+    # def get(self, request):
+    #     return(render(request, 'AuthFlow/splash.html'))
     
 
 # signup page
 class SignupView(View):
-    def get(self, request):
-        return(render(request, 'AuthFlow/splash.html'))
+    pass
+    # def get(self, request):
+    #     return(render(request, 'AuthFlow/splash.html'))
     
 
 # login page
 class LoginView(View):
-    def get(self, request):
-        return(render(request, 'AuthFlow/splash.html'))
+    pass
+    # def get(self, request):
+    #     return(render(request, 'AuthFlow/splash.html'))

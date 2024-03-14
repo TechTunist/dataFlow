@@ -7,18 +7,21 @@ source venv/bin/activate;
 pip install -r DataFlowDirectory/requirements.txt;
 
 # Check if .env file exists
-if [ ! -f "./DataFlowDirectory/.env" ]; then
-    echo "Creating .env file..."
+if [ ! -f "./.env" ]; then
+    echo "Creating .env file...";
 
     # Generate a Django secret key
-    SECRET_KEY=$(python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')
+    SECRET_KEY=$(python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())');
 
     # Create the .env file and write the secret key
-    echo "SECRET_KEY=${SECRET_KEY}" > .env
+    echo "SECRET_KEY=${SECRET_KEY}" > .env;
 
-    echo ".env file created."
+    # create the alpha vantage free api .env
+    echo "ALPHA_VANTAGE_API_KEY=4O8RCM0Q1WYUC73J" >> .env;
+
+    echo ".env file created.";
 else
-    echo ".env file already exists."
+    echo ".env file already exists.";
 fi
 
 
