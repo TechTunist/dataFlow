@@ -9,6 +9,13 @@ from rest_framework import generics
 from .serializers import BitcoinDailySerializer
 import json
 
+from django.http import HttpResponse
+def httpTest(request):
+    response = request.META
+    for key,val in response.items():
+        print(key, "=>", val)
+    return HttpResponse(response, content_type='text/html', status=599)
+
 
 load_dotenv()
 

@@ -7,9 +7,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-## 20 years of data returned from this api call
-# 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo'
-
 class Command(BaseCommand):
     help = "Fetches and stores Ethereum daily data"
 
